@@ -3,44 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS AI - Personal Assistant</title>
+    <title>NEXUS AI</title>
     <style>
-        body {
-            background-color: #0f172a;
-            color: white;
+        /* Modern, Futuristic Dark Theme Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
             text-align: center;
+            overflow-x: hidden;
         }
+
+        header {
+            margin-bottom: 40px;
+        }
+
         h1 {
             font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
-            letter-spacing: 2px;
-            color: #38bdf8;
+            animation: pulse 3s infinite alternate;
         }
-        p {
+
+        .subtitle {
             color: #94a3b8;
-            font-size: 1.2rem;
-            max-width: 80%;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .achievement-container {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .achievement-text {
+            font-size: 1rem;
+            color: #cbd5e1;
             line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.03); }
         }
     </style>
-
-    <!-- YOUR LIVE CHATBASE SCRIPT SITS BELOW -->
-    <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="Z7bBzsnHmCSizipwjmzh8";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-    </script>
-
 </head>
 <body>
 
-    <h1>NEXUS AI</h1>
-    <p>Welcome to my technical achievement. Click the bubble in the bottom corner to chat with my personal assistant.</p>
+    <header>
+        <h1>NEXUS AI</h1>
+        <p class="subtitle">Welcome to the future of AI assistance.</p>
+    </header>
+
+    <div class="achievement-container">
+        <p class="achievement-text">
+            Welcome to my technical achievement! Click the bubble in the bottom corner to chat with my personal assistant.
+        </p>
+    </div>
+
+    <!-- Chatbase Embed Section -->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="-_qgBMF1NBb0AeeA3o0VT";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
 
 </body>
 </html>
