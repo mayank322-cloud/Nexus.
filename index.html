@@ -27,7 +27,7 @@
         }
 
         header {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         h1 {
@@ -48,7 +48,7 @@
             letter-spacing: 1px;
         }
 
-        .achievement-container {
+        .main-container {
             background: rgba(30, 41, 59, 0.7);
             border: 1px solid rgba(59, 130, 246, 0.2);
             padding: 30px;
@@ -57,13 +57,107 @@
             width: 100%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
+            margin-bottom: 20px;
         }
 
         .achievement-text {
             font-size: 1rem;
             color: #cbd5e1;
             line-height: 1.6;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nexus-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            margin-bottom: 25px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .nexus-download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+        }
+
+        .dl-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Custom File Upload Form Styling */
+        .upload-form {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: left;
+        }
+
+        .upload-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #3b82f6;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"], 
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .form-group input[type="file"]::file-selector-button {
+            background: #3b82f6;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            padding: 5px 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
         }
 
         @keyframes pulse {
@@ -79,10 +173,37 @@
         <p class="subtitle">Welcome to the future of AI assistance.</p>
     </header>
 
-    <div class="achievement-container">
+    <div class="main-container">
         <p class="achievement-text">
-            Welcome to my technical achievement! Click the bubble in the bottom corner to chat with my personal assistant.
+            Welcome to my technical achievement! You can download the mobile app below, or use the form to upload and send attachments directly to me.
         </p>
+
+        <!-- Download Button -->
+        <a href="https://www.mediafire.com/file/qddw45tky8jdtjv/_NEXUS_19986294.apk/file" class="nexus-download-btn" target="_blank">
+            <svg class="dl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download NEXUS AI APK</span>
+        </a>
+
+        <!-- Custom Attachment Upload Section -->
+        <form class="upload-form" action="https://formspree.io/f/xaqrqzga" method="POST" enctype="multipart/form-data">
+            <div class="upload-title">📤 Send An Attachment</div>
+            
+            <div class="form-group">
+                <label for="username">Your Name / Handle</label>
+                <input type="text" id="username" name="name" placeholder="Optional" required>
+            </div>
+
+            <div class="form-group">
+                <label for="file-upload">Select File (Photo, Video, Document)</label>
+                <input type="file" id="file-upload" name="attachment" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Upload & Send</button>
+        </form>
     </div>
 
     <!-- Chatbase Embed Section -->
