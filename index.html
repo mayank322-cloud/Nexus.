@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS AI - Home</title>
+    <title>NEXUS AI - Live Workspace</title>
     <style>
-        /* Modern Dark Theme Base Setup */
+        /* Modern Dark Theme */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: #131314;
             color: #e3e3e3;
             display: flex;
@@ -40,39 +40,19 @@
             color: #80868b;
             line-height: 1.6;
         }
-        /* Styling adjustments for Coze widget layout if needed */
-        .coze-webchat-client-wrapper {
-            z-index: 99999 !important;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>NEXUS AI</h1>
-        <p>Your intelligent, custom companion avatar is running live. Tap the chat icon in the bottom corner to start a conversation!</p>
+        <p>Your custom Chatbase companion avatar is running live. Tap the chat icon in the bottom corner to start chatting with NEXUS!</p>
     </div>
 
-    <!-- --- COZE INTERACTIVE CHAT SDK EMBED --- -->
-    <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
+    <!-- --- YOUR FINAL CHATBASE FLOATING WIDGET EMBED --- -->
     <script>
-      new CozeWebSDK.WebChatClient({
-        config: {
-          bot_id: '7663854648063590405',
-        },
-        componentProps: {
-          title: 'NEXUS',
-        },
-        auth: {
-          type: 'token',
-          token: 'pat_********',
-          onRefreshToken: function () {
-            return 'pat_********'
-          }
-        }
-      });
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="-_qgBMF1NBb0AeeA3o0VT";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
     </script>
 
 </body>
 </html>
-
